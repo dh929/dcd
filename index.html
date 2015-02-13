@@ -9,12 +9,61 @@
 <script>
 $(document).ready(
 	function(){
+		var num1 = 0;
+		var num2 = 0;
+		var total = 0;
+		var add = function(){
+			num1 = parseInt($('#num1').val());
+			num2 = parseInt($('#num2').val());
+			total = num1 + num2; 
+		}
+					
+		var sub = function(){
+			num1 = parseInt($('#num1').val());
+			num2 = parseInt($('#num2').val());
+			total = num1 + num2;
+		}
 		
-		$('#calc').click(
+		var multi = function(){
+			num1 = parseInt($('#num1').val());
+			num2 = parseInt($('#num2').val());
+			total = num1 * num2;
+		}
+		
+		var divi = function(){
+			num1 = parseInt($('#num1').val());
+			num2 = parseInt($('#num2').val());
+			total = num1 / num2;
+		}
+		
+		$('#add').click(
 			function(){
-				var num1 = parseInt($('#num1').val());
-				var num2 = parseInt($('#num2').val());
-				var total = num1 + num2
+				add();
+				
+				$('#display').html('<h1>'+total+'</h1>');
+			}
+		);
+		
+		$('#sub').click(
+			function(){
+				sub();
+				
+				$('#display').html('<h1>'+total+'</h1>');
+			}
+		);
+		
+		$('#multi').click(
+			function(){
+				multi();
+				
+				$('#display').html('<h1>'+total+'</h1>');
+			}
+		);
+		
+		$('#divi').click(
+			function(){
+				divi();
+				
 				$('#display').html('<h1>'+total+'</h1>');
 			}
 		);
@@ -22,8 +71,11 @@ $(document).ready(
 );
 </script>
 <body>
-	<input id=" num1" type='text' placeholder="the 1st #"/>
+	<input id="num1" type='text' placeholder="the 1st #"/>
     <button id= 'add'>+</button>
+    <button id= 'sub'>-</button>
+    <button id= 'muilt'>x</button>
+    <button id= 'divi'>/</button>
     <input id= 'num2' type='text' placeholder='the 2nd #'/>
     <button id= 'calc'>Calculate</button>
     <div id="display">
